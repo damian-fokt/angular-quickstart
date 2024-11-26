@@ -1,0 +1,23 @@
+<h1>{{ car.make }} {{ car.model }} ({{ car.year }})</h1>
+<h2>Service Records</h2>
+<ul>
+  <li *ngFor="let service of car.services">
+    Part: {{ service.part }}, Cost: ${{ service.cost }}
+  </li>
+</ul>
+
+<h3>Add New Service</h3>
+<form (ngSubmit)="addService()">
+  <label for="part">Part:</label>
+  <input id="part" [(ngModel)]="newService.part" name="part" required />
+  <label for="cost">Cost:</label>
+  <input
+    id="cost"
+    type="number"
+    [(ngModel)]="newService.cost"
+    name="cost"
+    required
+  />
+  <button type="submit">Add Service</button>
+</form>
+<a routerLink="/">Back to Car List</a>

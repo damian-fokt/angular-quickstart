@@ -1,0 +1,17 @@
+<h1>Add a New Car</h1>
+<form (ngSubmit)="addCar()">
+  <label for="make">Make:</label>
+  <input id="make" [(ngModel)]="newCar.make" name="make" required />
+  <label for="model">Model:</label>
+  <input id="model" [(ngModel)]="newCar.model" name="model" required />
+  <label for="year">Year:</label>
+  <input
+    id="year"
+    type="number"
+    [(ngModel)]="newCar.year"
+    name="year"
+    required
+  />
+  <button type="submit">Add Car</button>
+</form>
+<a routerLink="/">Back to Car List</a>
